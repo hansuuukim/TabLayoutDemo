@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class TabPagerAdapter extends FragmentPagerAdapter {
     int tabCount;
+    int pos_info;
 
     public TabPagerAdapter(FragmentManager fm, int numberOfTabs){
         super(fm);
@@ -21,6 +22,7 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0:
                 Tab1Fragment tab1 = new Tab1Fragment();
+                this.pos_info = position;
 
                 return tab1;
             case 1:

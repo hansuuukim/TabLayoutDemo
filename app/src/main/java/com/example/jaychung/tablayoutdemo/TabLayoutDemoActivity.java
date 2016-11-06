@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
 
-    TextView txt = (TextView) findViewById(R.id.current_itm);
+    public String posInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,6 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
-
-
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -56,9 +54,11 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                //Snackbar.make(view, getString(adapter.getItemPosition(position)),Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        //            .setAction("Action", null).show();
+                Snackbar.make(view, getString(viewPager.getCurrentItem()),Snackbar.LENGTH_SHORT)
+                        .setAction("Action",null).show();
+
             }
         });
     }
