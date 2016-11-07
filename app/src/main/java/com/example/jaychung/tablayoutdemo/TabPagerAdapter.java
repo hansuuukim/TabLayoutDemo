@@ -38,4 +38,9 @@ public class TabPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount(){ return tabCount; }
+
+
+    public int getPosInfo(){
+        return pos_info;
+    }
 }

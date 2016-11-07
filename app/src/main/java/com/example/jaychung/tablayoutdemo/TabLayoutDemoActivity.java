@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TabLayoutDemoActivity extends AppCompatActivity {
@@ -56,8 +57,7 @@ public class TabLayoutDemoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
         //            .setAction("Action", null).show();
-                Snackbar.make(view, getString(viewPager.getCurrentItem()),Snackbar.LENGTH_SHORT)
-                        .setAction("Action",null).show();
+                Toast.makeText(getApplicationContext(), "토스트메시지입니다.",Toast.LENGTH_SHORT).show();
 
             }
         });
